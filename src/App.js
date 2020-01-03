@@ -3,6 +3,7 @@ import React from 'react';
 import './App.css';
 
 import logo from './img/logo.svg';
+import Register from './components/Register/Register';
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
           </ul>
         </div>
       </header>
-      <body></body>
+      <body class></body>
     </div>
   );
 }
