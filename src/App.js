@@ -1,24 +1,19 @@
-import React from 'react';
-
+import React, { Fragment } from 'react';
 import './App.css';
 
-import logo from './img/logo.svg';
-import Register from './components/Register/Register';
+import Navbar from './components/layout/Navbar';
+import Landing from './components/layout/Landing';
+
+import { BrowserRouter as Router } from 'react-router-dom';
 
 function App() {
   return (
-    <div className='App'>
-      <header className='header'>
-        <div className='navbar-container'>
-          <img className='navbar-logo' src={logo}></img>
-          <ul className='navbar-items'>
-            <li className='navbar-item'>Register</li>
-            <li className='navbar-item'>Login</li>
-          </ul>
-        </div>
-      </header>
-      <body class></body>
-    </div>
+    <Fragment>
+      <Router>
+        <Navbar />
+        <Landing />
+      </Router>
+    </Fragment>
   );
 }
 
