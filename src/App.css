@@ -12,6 +12,11 @@ body {
 }
 
 .navbar-container {
+  position: fixed;
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   background-color: var(--navbar-color);
@@ -64,6 +69,7 @@ body {
 .x-large {
   font-size: 2rem;
   margin-bottom: 20px;
+  text-shadow: 2px 2px rgb(89, 91, 92);
 }
 
 .lead {
@@ -71,6 +77,7 @@ body {
 }
 
 .btn {
+  box-shadow: 1px 1px 5px grey;
   text-decoration: none;
   color: rgb(255, 255, 255);
   padding: 10px;
