@@ -31,15 +31,28 @@ body {
   grid-column: 2;
   display: flex;
   font-size: 0.8em;
-  list-style-type: none;
   align-self: center;
   justify-self: end;
   margin-right: 10px;
+  text-decoration: none;
 }
 
 .navbar-items li {
   padding: 5px;
   margin: 5px;
+  list-style-type: none;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+a:hover {
+  color: white;
+}
+
+ul {
+  list-style: none;
 }
 
 .landing {
@@ -99,4 +112,10 @@ body {
   padding: 0 2rem;
   margin-top: 6rem;
   margin-bottom: 3rem;
+}
+
+.form input {
+  display: block;
+  padding: 5px;
+  margin: 1rem 0;
 }
