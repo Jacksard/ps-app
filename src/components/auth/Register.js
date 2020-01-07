@@ -18,20 +18,31 @@ const Register = () => {
     if (password !== password2) {
       console.log('Passwords do not match');
     } else {
-      const newUser = {
+      /* const newUser = {
         name,
         email,
         password
       };
 
       try {
-        // we are sending data so we need to create config headers
+        // We are sending data so we need to create a config with headers
         const config = {
           headers: {
             'Content-Type': 'application/json'
           }
         };
-      } catch (err) {}
+
+        const body = JSON.stringify(newUser);
+        const res = await axios.post(
+          'http://localhost:5000/api/users',
+          body,
+          config
+        );
+        console.log(res.data);
+      } catch (err) {
+        console.error(err.response.data);
+      } */
+      console.log('Success...');
     }
   };
 
