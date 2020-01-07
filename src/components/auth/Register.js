@@ -13,12 +13,25 @@ const Register = () => {
   const onChange = e =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
-  const onSubmit = e => {
+  const onSubmit = async e => {
     e.preventDefault();
     if (password !== password2) {
       console.log('Passwords do not match');
     } else {
-      console.log(formData);
+      const newUser = {
+        name,
+        email,
+        password
+      };
+
+      try {
+        // we are sending data so we need to create config headers
+        const config = {
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        };
+      } catch (err) {}
     }
   };
 
