@@ -92,3 +92,11 @@ body {
 .buttons {
   padding: 50px;
 }
+/* Utilities */
+.container {
+  margin: auto;
+  overflow: hidden;
+  padding: 0 2rem;
+  margin-top: 6rem;
+  margin-bottom: 3rem;
+}
