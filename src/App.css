@@ -119,3 +119,13 @@ ul {
   padding: 5px;
   margin: 1rem 0;
 }
+
+.alert {
+  padding: 8px;
+  margin: 5px;
+}
+
+.alert-danger {
+  background-color: rgb(252, 107, 107);
+  color: #fff;
+}
