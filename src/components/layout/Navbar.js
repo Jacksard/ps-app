@@ -9,31 +9,37 @@ import { logout } from '../../actions/auth';
 const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
     <ul className='navbar-items'>
-      <li className='navbar-item'>
+      <li>
+        <Link to='/dashboard'>
+          <span>Dashboard</span>
+        </Link>
+      </li>
+      <li>
         <a onClick={logout} href='#!'>
-          Logout
+          <span>Logout</span>
         </a>
       </li>
     </ul>
   );
   const guestLinks = (
     <ul className='navbar-items'>
-      <Link to='/register'>
-        <li className='navbar-item'>Register</li>
-      </Link>
-      <Link to='/login'>
-        <li className='navbar-item'>Login</li>
-      </Link>
+      <li>
+        <Link to='/register'>Register</Link>
+      </li>
+      <li>
+        <Link to='/login'>Login</Link>
+      </li>
     </ul>
   );
   return (
     <header className='header'>
       <div className='navbar-container'>
         <img className='navbar-logo' src={logo} alt='img' />
+
+        {!loading && (
+          <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>
+        )}
       </div>
-      {!loading && (
-        <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>
-      )}
     </header>
   );
 };

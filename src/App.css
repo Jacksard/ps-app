@@ -27,17 +27,22 @@ body {
   grid-column: 1;
   margin: 15px;
 }
+
+.navbar ul {
+  display: flex;
+}
+
 .navbar-items {
   grid-column: 2;
   display: flex;
-  font-size: 0.8em;
+  font-size: 0.9em;
   align-self: center;
   justify-self: end;
   margin-right: 10px;
   text-decoration: none;
 }
 
-.navbar-items li {
+li {
   padding: 5px;
   margin: 5px;
   list-style-type: none;
