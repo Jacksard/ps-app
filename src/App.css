@@ -122,7 +122,12 @@ ul {
 .form input {
   display: block;
   padding: 5px;
-  margin: 1rem 0;
+  margin: 5px;
+}
+
+textarea {
+  width: 500px;
+  height: 100px;
 }
 
 .alert {
@@ -133,4 +138,14 @@ ul {
 .alert-danger {
   background-color: rgb(252, 107, 107);
   color: #fff;
+}
+
+p {
+  margin: 5px;
+}
+
+.btn-create {
+  padding: 5px;
+  line-height: 1em;
+  background-color: var(--navbar-color);
 }
