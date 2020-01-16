@@ -99,8 +99,16 @@ ul {
   text-decoration: none;
   color: rgb(255, 255, 255);
   padding: 10px;
-  margin: 15px;
+  margin: 5px;
   background-color: #27678b;
+}
+
+.btn-light,
+.bg-light,
+.badge-light,
+.alert-light {
+  background: var(--light-color);
+  color: #333;
 }
 
 .btn:hover {
@@ -148,4 +156,10 @@ p {
   padding: 5px;
   line-height: 1em;
   background-color: var(--navbar-color);
+}
+
+.dash-buttons a {
+  display: block;
+  padding: 5px;
+  margin: 5px;
 }

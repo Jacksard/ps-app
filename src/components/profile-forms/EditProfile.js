@@ -2,9 +2,14 @@ import React, { useEffect, useState, Fragment } from 'react';
 import { Link, withRouter, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { createProfile } from '../../actions/profile';
+import { createProfile, getCurrentProfile } from '../../actions/profile';
 
-const CreateProfile = ({ createProfile, history }) => {
+const EditProfile = ({
+  profile: { profile, loading },
+  createProfile,
+  getCurrentProfile,
+  history
+}) => {
   const [formData, setFormData] = useState({
     website: '',
     location: '',
@@ -141,7 +146,15 @@ const CreateProfile = ({ createProfile, history }) => {
   );
 };
 CreateProfile.propTypes = {
-  createThisProfile: PropTypes.func.isRequired
+  createThisProfile: PropTypes.func.isRequired,
+  getCurrentProfile: PropTypes.func.isRequired,
+  profile: PropTypes.object.isRequired
 };
 
-export default connect(null, { createProfile })(withRouter(CreateProfile));
+const mapStateToProps = (state = {
+  profile: state.profile
+});
+
+export default connect(mapStateToProps, { EditProfile, getCurrentProfile })(
+  withRouter(CreateProfile)
+);
