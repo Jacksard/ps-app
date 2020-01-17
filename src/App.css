@@ -111,6 +111,10 @@ ul {
   color: #333;
 }
 
+.alert-success {
+  background: greenyellow;
+}
+
 .btn:hover {
   background-color: #004770;
 }
