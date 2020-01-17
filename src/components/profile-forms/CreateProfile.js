@@ -141,7 +141,7 @@ const CreateProfile = ({ createProfile, history }) => {
   );
 };
 CreateProfile.propTypes = {
-  createThisProfile: PropTypes.func.isRequired
+  createProfile: PropTypes.func.isRequired
 };
 
 export default connect(null, { createProfile })(withRouter(CreateProfile));

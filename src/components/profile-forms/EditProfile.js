@@ -22,6 +22,20 @@ const EditProfile = ({
 
   const [displaySocialInputs, toggleSocialInputs] = useState(false);
 
+  useEffect(() => {
+    getCurrentProfile();
+
+    setFormData({
+      website: loading || !profile.website ? '' : profile.website,
+      location: loading || !profile.location ? '' : profile.location,
+      bio: loading || !profile.bio ? '' : profile.bio,
+      youtube: loading || !profile.social ? '' : profile.social.youtube,
+      instagram: loading || !profile.social ? '' : profile.social.instagram,
+      linkedin: loading || !profile.social ? '' : profile.social.linkedin,
+      facebook: loading || !profile.social ? '' : profile.social.facebook
+    });
+  }, [loading]);
+
   const {
     website,
     location,
@@ -37,7 +51,7 @@ const EditProfile = ({
   };
   const onSubmit = e => {
     e.preventDefault();
-    createProfile(formData, history);
+    createProfile(formData, history, true);
   };
 
   return (
@@ -106,7 +120,6 @@ const EditProfile = ({
                 onChange={e => onChange(e)}
               />
             </div>{' '}
-            */
             <div className='form-group social-input'>
               <input
                 type='text'
@@ -145,16 +158,16 @@ const EditProfile = ({
     </Fragment>
   );
 };
-CreateProfile.propTypes = {
-  createThisProfile: PropTypes.func.isRequired,
+EditProfile.propTypes = {
+  createProfile: PropTypes.func.isRequired,
   getCurrentProfile: PropTypes.func.isRequired,
   profile: PropTypes.object.isRequired
 };
 
-const mapStateToProps = (state = {
+const mapStateToProps = state => ({
   profile: state.profile
 });
 
-export default connect(mapStateToProps, { EditProfile, getCurrentProfile })(
-  withRouter(CreateProfile)
+export default connect(mapStateToProps, { createProfile, getCurrentProfile })(
+  withRouter(EditProfile)
 );
