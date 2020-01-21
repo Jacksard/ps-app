@@ -167,3 +167,13 @@ p {
   padding: 5px;
   margin: 5px;
 }
+
+.table th,
+.table td {
+  padding: 1rem;
+  text-align: left;
+}
+
+.table th {
+  background: gray;
+}
